@@ -3,7 +3,7 @@ import json
 
 def load_candidates_from_json(data):
     """
-    Загрузка кандидатов
+    Загрузка кандидатов.
     """
     with open(data, 'r', encoding='utf-8') as file:
         return json.load(file)
@@ -22,7 +22,7 @@ def get_all_candidates(data):
 
 def get_candidate(id, data):
     """
-    Одного кандидата по его id
+    Одного кандидата по его id.
     """
     result = '<h1>'
     for name in data:
@@ -37,7 +37,7 @@ def get_candidate(id, data):
 
 def get_candidates_by_name(name_candidate, data):
     """
-    Одного кандидата по имени
+    Одного кандидата по имени.
     """
     result = '<h1>Найдено кандидатов:</h1><br />'
     for name in data:
@@ -49,7 +49,7 @@ def get_candidates_by_name(name_candidate, data):
 
 def get_by_skill(skill_name, data):
     """
-    Вернет кандидатов по навыку
+    Вернет кандидатов по навыку.
     """
     sum_candidates = []
     result = f"""<h1>Найдено со скиллом {skill_name}: """
