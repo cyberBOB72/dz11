@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def page_index():
-    candidates = get_all_candidates(candidates)
-    return render_template('list.html', candidates=candidates)
+    candidate = candidates
+    return render_template('list.html', candidate=candidate)
 
 
 @app.route("/candidate/<int:uid>")
@@ -20,14 +20,14 @@ def page_candidate(uid):
 
 @app.route("/search/<uid>")
 def page_search(uid):
-    candidates = get_candidates_by_name(uid, candidates)
-    return render_template('search.html', candidates=candidates, count=len(candidates))
+    candidate = get_candidates_by_name(uid, candidates)
+    return render_template('search.html', candidate=candidate, count=len(candidate))
 
 
 @app.route("/skill/<uid>")
 def page_skill(uid):
-    candidates = get_by_skill(uid, candidates)
-    return render_template('skill.html', candidates=candidates, count=len(candidates))
+    candidate = get_by_skill(uid, candidates)
+    return render_template('skill.html', candidate=candidate, count=len(candidate), uid=uid)
 
 
 app.run()

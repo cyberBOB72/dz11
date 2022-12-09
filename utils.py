@@ -9,13 +9,6 @@ def load_candidates_from_json(data):
         return json.load(file)
 
 
-def get_all_candidates(data):
-    """
-    Список всех.
-    """
-    return load_candidates_from_json(data)
-
-
 def get_candidate(id, data):
     """
     Одного кандидата по его id.
